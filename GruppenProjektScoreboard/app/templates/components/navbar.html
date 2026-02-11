@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<nav class="navbar">
+    <div class="nav-conteiner">
+        <a href="{{url_for('score.index') }}" class="logo"></a>
 
-</body>
-</html>
+        <ul class="nav-links">
+        <li><a href="{{ url_for('score.add_score') }}">Neuer Score</a></li>
+            <li><a href="{{ url_for('score.show_scores') }}">Scores anzeigen</a></li>
+            <li><a href="{{ url_for('score.highscore') }}">Highscore</a></li>
+            <li><a href="{{ url_for('score.top3') }}">Top 3</a></li>
+            <li><a href="{{ url_for('score.average') }}">Durchschnitt</a></li>
+            <li><a href="{{ url_for('score.search') }}">Spieler suchen</a></li>
+        </ul>
+    </div>
+</nav>

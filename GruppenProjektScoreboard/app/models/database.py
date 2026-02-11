@@ -4,7 +4,7 @@ DB_NAME = "project.db"
 
 class Database:
     def __init__(self, db_name=DB_NAME):
-        self.conn = sqlite3.connect(db_name)
+        self.conn = sqlite3.connect(db_name, check_same_thread=False)
         self.cursor = self.conn.cursor()
         self.init_db()
 

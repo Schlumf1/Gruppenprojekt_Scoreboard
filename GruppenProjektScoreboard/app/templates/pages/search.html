@@ -1,0 +1,24 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+<h2>Spieler suchen</h2>
+
+<form method="POST" class="form">
+    <input type="text" name="name" placeholder="Gib den Namen ein" required>
+    <button type="submit" class="btn">Suchen</button>
+</form>
+
+{% if results is not none %}
+    {% if results %}
+        <h3>Score von: {{ name }}</h3>
+        <ul>
+            {% for _, score in results %}
+                <li>{{ score }} Punkte</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Kein Score für {{ name }} gefunden.</p>
+    {% endif %}
+{% endif %}
+
+{% endblock %}

@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout/base.html" %}
 
-</body>
-</html>
+{% block content %}
+<h2>{{ title if title else "Alle Scors" }}</h2>
+
+{% if scores %}
+<table>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Score</th>
+    </tr>
+    {% for name, score in scores %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ name }}</td>
+        <td>{{ score }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>Keine gespeicherten Scores.</p>
+{% endif %}
+
+{% endblock %}

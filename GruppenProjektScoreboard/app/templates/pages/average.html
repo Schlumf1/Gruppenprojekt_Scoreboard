@@ -1,0 +1,12 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+<h2>Durchschnittlicher Score</h2>
+
+{% if average %}
+<p>Durchschnittliche Punktzahl: <strong>{{ "%.2f"|format(average) }}</strong></p>
+{% else %}
+<p>Keine Daten zur Berechnung des Durchschnitts.</p>
+{% endif %}
+
+{% endblock %}

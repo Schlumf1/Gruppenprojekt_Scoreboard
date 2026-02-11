@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout/base.html" %}
 
-</body>
-</html>
+{% block content %}
+<h1>Willkommen im Scoreboard</h1>
+
+<p>Verwalte die Spielerscores auf einfache und bequeme Weise.</p>
+
+<div class="buttons">
+    <a href="{{ url_for('score.add_score') }}" class="btn"> Neuer Score</a>
+    <a href="{{ url_for('score.show_scores') }}" class="btn"> Scores anzeigen</a>
+</div>
+
+{% endblock %}
